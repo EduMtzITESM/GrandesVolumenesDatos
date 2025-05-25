@@ -126,3 +126,9 @@ Aunque no están en un módulo específico de "unsupervised", PySpark ofrece sop
 8. **Truncated Singular Value Decomposition (SVD)**
    `TruncatedSVD()`
    Reducción lineal de dimensiones (en Spark solo disponible para matrices dispersas como `RowMatrix` en `pyspark.mllib.linalg.distributed`).
+
+# Partes: 2. Selección de los datos, 3. Preparación de los datos, 4. Preparación del conjunto de entrenamiento y prueba y 5. Construcción de modelos de aprendizaje supervisado y no supervisado
+
+El desarrollo de estas secciones se encuenta en el el jupyter notebook que se encuentra en este repositorio en la liga:
+
+liga
