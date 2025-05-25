@@ -1,3 +1,8 @@
+# Grandes Volúmenes de datos
+
++ Estudiante: Eduardo Selim Martínez Mayorga
+
+# Actividad 3: Aprendizaje supervisado y no supervisado
 
 # Parte 1: Introducción teórica
 
