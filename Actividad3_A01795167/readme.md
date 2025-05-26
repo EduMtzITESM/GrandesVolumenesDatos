@@ -12,13 +12,7 @@ En machine learning se suele caracterizar a los algoritmos dependiendo de la nat
 
 **Aprendizaje Supervisado**: Este tipo de aprendizaje utiliza conjuntos de datos etiquetados donde cada observación tiene una etiqueta (ya sea numérica o categórica) conocida y correcta. El algoritmo aprende a mapear las entradas a las salidas correctas mediante la observación de estos pares entrada-salida durante el entrenamiento. Su objetivo principal es construir un modelo que pueda predecir con precisión las etiquetas o valores de nuevos datos no vistos anteriormente. Se divide en dos categorías: clasificación (predecir categorías discretas como spam/no spam) y regresión (predecir valores continuos como precios de casas).
 
-Claro, aquí tienes los **principales algoritmos de aprendizaje supervisado**, agrupados por tipo, con una breve descripción:
-
----
-
-### 🔹 **1. Regresión**
-
-Modelan una **variable continua** (output numérico):
+Algunos de los principales algoritmos de aprendizaje supervisado son:
 
 1. **Regresión Lineal (Linear Regression)**: Ajusta una línea recta a los datos. Su fórmula: $y = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p + \varepsilon$
 
