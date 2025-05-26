@@ -61,10 +61,7 @@ Algunos de los principales algoritmos de aprendizaje supervisado son:
 * **EM con GMMs** (Expectation-Maximization con modelos de mezcla gaussiana)
 * **Semi-supervised Variational Autoencoders (VAE)**
 
-5. **Graph Neural Networks (GNN) Semi-supervisados**
-
-* Redes neuronales aplicadas a grafos (como los sociales o biológicos).
-* Ejemplo: **GCN (Graph Convolutional Network)**, que puede entrenarse con unas pocas etiquetas y propagar señales a través del grafo.
+5. **Graph Neural Networks (GNN) Semi-supervisados y GCN (Graph Convolutional Network)**, que puede entrenarse con unas pocas etiquetas y propagar señales a través del grafo.
 
 6. **Algoritmos Basados en Consistencia / Entropía**. Generan modelos que sean robustos a pequeñas perturbaciones en los datos no etiquetados.
 * **Consistency Regularization**: el modelo debe dar resultados similares con datos ligeramente modificados.
@@ -76,6 +73,40 @@ Algunos de los principales algoritmos de aprendizaje supervisado son:
 * **MixMatch, FixMatch, Noisy Student** (state-of-the-art en visión): combinan augmentación, pseudoetiquetado, y consistencia.
 
 **Aprendizaje por refuerzo**: En este paradigma, un agente aprende a tomar decisiones óptimas en un entorno mediante la interacción directa, recibiendo recompensas o castigos basados en sus acciones. El objetivo es que el agente desarrolle una política de comportamiento que maximice la recompensa acumulada a largo plazo, aprendiendo qué acciones tomar en diferentes situaciones a través de prueba y error. No requiere necesariamente datos etiquetados, sino que aprende de las consecuencias de sus propias acciones. Es fundamental en aplicaciones como juegos, robótica, sistemas de recomendación y control autónomo, donde el agente debe aprender estrategias óptimas para alcanzar objetivos específicos.
+
+1. **Q-Learning** Es un método basado en balores (value-based method) mediante un algoritmo off-policy que aprende la función $Q(s, a)$ directamente. Aprende la función de valor $V(s)$ o la función de acción-valor $Q(s, a)$. Se actualiza usando
+
+     $$
+     Q(s,a) \leftarrow Q(s,a) + \alpha \left[r + \gamma \max_{a'} Q(s', a') - Q(s,a) \right]
+     $$
+
+2. **SARSA (State–Action–Reward–State–Action)**: Es un algoritmo on-policy que usa la acción realmente tomada en la siguiente iteración. Se actualiza a partir de
+
+     $$
+     Q(s,a) \leftarrow Q(s,a) + \alpha \left[r + \gamma Q(s', a') - Q(s,a) \right]
+     $$
+
+3. **Deep Q-Networks (DQN)**: Generaliza al Q-Learning con redes neuronales profundas. Usa *replay memory* y *target networks* para estabilizar el entrenamiento.
+
+4. **REINFORCE (Monte Carlo Policy Gradient)**: Aprenden directamente una política $\pi(a|s)$ sin estimar una función de valor explícita. Aprende la política directamente usando gradientes. Se actualiza mediante
+
+     $$
+     \nabla J(\theta) = \mathbb{E}[\nabla_\theta \log \pi_\theta(a|s) R]
+     $$
+
+5. **Actor-Critic**: Usa un actor (para la política) y un crítico (para la función de valor), balanceando entre métodos basados en valores y políticas.
+6. **Proximal Policy Optimization (PPO)**: Optimiza la política restringiendo cuánto puede cambiar entre pasos. Suele ser  estable y popular (usado por OpenAI en múltiples proyectos).
+
+7. **Trust Region Policy Optimization (TRPO)**: Similar a PPO pero con restricciones de segundo orden para evitar grandes saltos en la política.
+8. **Deep Deterministic Policy Gradient (DDPG)**: Algoritmo actor-critic para acciones continuas, combinando ideas de DQN y política determinista.
+9. **Twin Delayed DDPG (TD3)**: Mejora DDPG reduciendo el sobreajuste con dos críticos y suavizando las actualizaciones.
+10. **Soft Actor-Critic (SAC)**:Actor-critic con una función de entropía que fomenta exploración; generalmente eficaz para entornos continuos.
+11. **Dyna-Q (Sutton)**: Aprenden una representación del entorno para planificar acciones combinando aprendizaje directo con simulaciones del modelo aprendido.
+12. **MuZero** (DeepMind) Aprende el modelo del entorno de forma implícita y no requiere conocer las reglas del entorno (ej. Go, ajedrez).
+13. **Multi-Agent Reinforcement Learning (MARL)**: Agentes múltiples interactúan en un entorno compartido, en el que son competitivos o cooperativos.
+14. **Hierarchical RL (HRL)**: Usa múltiples niveles de políticas para descomponer tareas complejas.
+
+## Algoritmos disponibles en PySpark
 
 En PySpark (la API de Python para Apache Spark), el módulo `pyspark.ml` proporciona varios **algoritmos de aprendizaje supervisado**, tanto para **clasificación** como para **regresión**.
 
