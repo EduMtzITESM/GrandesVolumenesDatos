@@ -18,7 +18,7 @@
 
 En PySpark (la API de Python para Apache Spark), el módulo `pyspark.ml` proporciona varios **algoritmos de aprendizaje supervisado**, tanto para **clasificación** como para **regresión**. Aquí tienes un resumen de los principales:
 
-### 🔹 CLASIFICACIÓN (`pyspark.ml.classification`)
+### Clasificación (`pyspark.ml.classification`)
 
 1. **Logistic Regression**
    `LogisticRegression()`
@@ -48,9 +48,7 @@ En PySpark (la API de Python para Apache Spark), el módulo `pyspark.ml` proporc
    `LinearSVC()`
    SVM para clasificación binaria (con margen suave).
 
----
-
-### 🔹 REGRESIÓN (`pyspark.ml.regression`)
+### Regresión (`pyspark.ml.regression`)
 
 1. **Linear Regression**
    `LinearRegression()`
@@ -86,10 +84,6 @@ En PySpark (la API de Python para Apache Spark), el módulo `pyspark.ml` proporc
 
 En **PySpark**, los algoritmos de **aprendizaje no supervisado** están disponibles principalmente en el módulo `pyspark.ml.clustering` (para *clustering*) y `pyspark.ml.fpm` (para *pattern mining*). A continuación te presento los principales algoritmos no supervisados que puedes usar:
 
----
-
-### 🔹 ALGORITMOS DE CLUSTERING (`pyspark.ml.clustering`)
-
 1. **K-Means**
    `KMeans()`
    Clustering basado en centros de masa. Requiere especificar el número de clusters `k`.
@@ -110,17 +104,10 @@ En **PySpark**, los algoritmos de **aprendizaje no supervisado** están disponib
    `PowerIterationClustering()`
    Algoritmo de clustering espectral escalable, basado en el análisis del grafo de similitud entre elementos.
 
----
-
-### 🔹 ALGORITMOS DE MINERÍA DE PATRONES FRECUENTES (`pyspark.ml.fpm`)
-
 6. **Frequent Pattern Growth (FP-Growth)**
    `FPGrowth()`
    Algoritmo eficiente para encontrar conjuntos frecuentes y generar reglas de asociación. Útil en análisis de cestas de mercado (*market basket analysis*).
 
----
-
-### 🔹 REDUCCIÓN DE DIMENSIONALIDAD
 
 Aunque no están en un módulo específico de "unsupervised", PySpark ofrece soporte para algunos algoritmos de reducción de dimensiones, útiles para tareas no supervisadas:
 
@@ -137,3 +124,7 @@ Aunque no están en un módulo específico de "unsupervised", PySpark ofrece sop
 El desarrollo de estas secciones se encuenta en el el jupyter notebook que se encuentra en este repositorio en la liga:
 
 [Jupyter Notebook](./ProyectoEntrega3ML_A01795167.ipynb)
+
+## Referencias
+
++ https://spark.apache.org/docs/latest/api/python/reference/pyspark.ml.html
