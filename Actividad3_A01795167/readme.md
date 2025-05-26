@@ -14,7 +14,7 @@ En machine learning se suele caracterizar a los algoritmos dependiendo de la nat
 
 Algunos de los principales algoritmos de aprendizaje supervisado son:
 
-1. **Regresión Lineal (Linear Regression)**: Ajusta una línea recta a los datos. Su fórmula: $y = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p + \varepsilon$
+1. **Regresión Lineal (Linear Regression)**: Ajusta una línea recta a los datos de la forma $y = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p + \varepsilon$
 
 2. **Regresión Logística (Logistic Regression)**: Se utiliza para  variables binarias categóricas.Usa la función logística para modelar la probabilidad:
      $P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p)}}$
@@ -36,7 +36,22 @@ Algunos de los principales algoritmos de aprendizaje supervisado son:
 
 **Aprendizaje no supervisado**: En este enfoque, el algoritmo trabaja con datos que no tienen etiquetas o respuestas conocidas, en el que se busca descubrir patrones ocultos y estructuras en los datos por sí mismo. El objetivo es encontrar representaciones útiles de los datos, agrupar elementos similares, reducir dimensionalidad o detectar anomalías sin guía externa. Las técnicas más comunes incluyen clustering (agrupamiento), reducción de dimensionalidad, y detección de patrones, siendo especialmente valioso para explorar datos desconocidos y encontrar insights que no son evidentes a simple vista.
 
-**Aprendizaje Semi-supervisado**: Esta metodología combina elementos del aprendizaje supervisado y no supervisado, utiliza una pequeña cantidad de datos etiquetados junto con una gran cantidad de datos sin etiquetar. El objetivo es aprovechar la gran cantidad información no etiquetada para mejorar el rendimiento del modelo más allá de lo que sería posible usando sólo los limitados datos etiquetados. Es particularmente útil cuando obtener etiquetas es costoso o requiere mucho tiempo, como en reconocimiento de imágenes médicas o procesamiento de lenguaje natural, donde se puede usar texto abundante sin anotar para mejorar modelos entrenados con pocos ejemplos etiquetados.
+1. **K-Means**: Divide los datos en $k$ grupos minimizando la varianza intra-cluster. Requiere definir el número de grupos $k$.
+2. **Hierarchical Clustering (Jerárquico)**: Crea una jerarquía de clústeres (en forma de árbol o dendrograma) y no requiere un número predefinido de clústeres.
+3. **DBSCAN (Density-Based Spatial Clustering of Applications with Noise)**: Agrupa según densidad de puntos; detecta outliers y no necesita especificar el número de clústeres.
+4. **Mean Shift**: Encuentra clústeres como regiones de alta densidad. No necesita predefinir el número de clústeres.
+5. **Gaussian Mixture Models (GMM)**: Supone que los datos provienen de una mezcla de distribuciones normales. Se considera más flexible que K-Means al intentar modelar formas elípticas de clústeres.
+6. **PCA (Análisis de Componentes Principales)**: Reduce la dimensionalidad maximizando la varianza explicada. Se dice que es lineal: pues proyecta los datos a nuevas variables ortogonales.
+7. **t-SNE (t-Distributed Stochastic Neighbor Embedding)**: Preserva relaciones locales para visualización en 2D/3D. Se usa generalmente para visualización, no para predicción.
+8. **UMAP (Uniform Manifold Approximation and Projection)**: Similar a t-SNE, pero más rápido y conserva mejor la estructura global.
+9. **Autoencoders (Redes Neuronales Auto-codificadoras)**
+10. **Isolation Forest**: Aísla observaciones anómalas usando árboles aleatorios y es eficiente para grandes conjuntos de datos.
+11. **One-Class SVM**: Aprende la frontera de decisión de una clase "normal" para detectar outliers.
+12. **LOF (Local Outlier Factor)**: Mide la rareza de una observación según la densidad de sus vecinos.
+13. **Apriori**: Encuentra patrones frecuentes entre variables categóricas, mediante reglas del tipo "Si A entonces B", como en market basket.
+14. **Eclat**: Variante de Apriori que usa conjuntos de transacciones para mayor eficiencia
+
+**Aprendizaje semi-supervisado**: Esta metodología combina elementos del aprendizaje supervisado y no supervisado, utiliza una pequeña cantidad de datos etiquetados junto con una gran cantidad de datos sin etiquetar. El objetivo es aprovechar la gran cantidad información no etiquetada para mejorar el rendimiento del modelo más allá de lo que sería posible usando sólo los limitados datos etiquetados. Es particularmente útil cuando obtener etiquetas es costoso o requiere mucho tiempo, como en reconocimiento de imágenes médicas o procesamiento de lenguaje natural, donde se puede usar texto abundante sin anotar para mejorar modelos entrenados con pocos ejemplos etiquetados.
 
 **Aprendizaje por refuerzo**: En este paradigma, un agente aprende a tomar decisiones óptimas en un entorno mediante la interacción directa, recibiendo recompensas o castigos basados en sus acciones. El objetivo es que el agente desarrolle una política de comportamiento que maximice la recompensa acumulada a largo plazo, aprendiendo qué acciones tomar en diferentes situaciones a través de prueba y error. No requiere necesariamente datos etiquetados, sino que aprende de las consecuencias de sus propias acciones. Es fundamental en aplicaciones como juegos, robótica, sistemas de recomendación y control autónomo, donde el agente debe aprender estrategias óptimas para alcanzar objetivos específicos.
 
