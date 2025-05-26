@@ -12,6 +12,34 @@ En machine learning se suele caracterizar a los algoritmos dependiendo de la nat
 
 **Aprendizaje Supervisado**: Este tipo de aprendizaje utiliza conjuntos de datos etiquetados donde cada observación tiene una etiqueta (ya sea numérica o categórica) conocida y correcta. El algoritmo aprende a mapear las entradas a las salidas correctas mediante la observación de estos pares entrada-salida durante el entrenamiento. Su objetivo principal es construir un modelo que pueda predecir con precisión las etiquetas o valores de nuevos datos no vistos anteriormente. Se divide en dos categorías: clasificación (predecir categorías discretas como spam/no spam) y regresión (predecir valores continuos como precios de casas).
 
+Claro, aquí tienes los **principales algoritmos de aprendizaje supervisado**, agrupados por tipo, con una breve descripción:
+
+---
+
+### 🔹 **1. Regresión**
+
+Modelan una **variable continua** (output numérico):
+
+1. **Regresión Lineal (Linear Regression)**: Ajusta una línea recta a los datos. Su fórmula: $y = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p + \varepsilon$
+
+2. **Regresión Logística (Logistic Regression)**: Se utiliza para  variables binarias categóricas.Usa la función logística para modelar la probabilidad:
+     $P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p)}}$
+
+3. **Regresión Ridge y Lasso (Regularizada)**: Introducen penalización para evitar overfitting:
+     * Ridge: penaliza con $\lambda \sum \beta_j^2$
+     * Lasso: penaliza con $\lambda \sum |\beta_j|$
+
+4. **K-Nearest Neighbors (KNN)**: Clasifica según los "k" vecinos más cercanos.
+5. **Árboles de Decisión (Decision Trees)**: Divide el espacio de variables explicativas en regiones homogéneas.
+6. **Random Forest**: Es un conjunto de árboles de decisión (ensamble) que educe la varianza y mejora la generalización.
+7. **Support Vector Machines (SVM)**: Intentan encuontrar el hiperplano óptimo que separa clases. Es útil en espacios de alta dimensión.
+8. **Naive Bayes**: Se basado en probabilidades condicionales y el teorema de Bayes y supone independencia entre variables predictoras.
+9. **Redes Neuronales Artificiales (ANN)**: Se componen de capas de neuronas artificiales, son muy flexibles, pero pueden sobreajustarse si no se regularizan.
+10. **Gradient Boosting Machines (GBM)**: Construye modelos secuenciales que corrigen errores anteriores. Ejemplos populares: XGBoost, LightGBM, CatBoost.
+11. **AdaBoost**: Pone más peso a los errores anteriores en cada iteración.
+12. **Stacking (Apilamiento)**:Mezcla modelos base y usa otro modelo para combinarlos.
+
+
 **Aprendizaje no supervisado**: En este enfoque, el algoritmo trabaja con datos que no tienen etiquetas o respuestas conocidas, en el que se busca descubrir patrones ocultos y estructuras en los datos por sí mismo. El objetivo es encontrar representaciones útiles de los datos, agrupar elementos similares, reducir dimensionalidad o detectar anomalías sin guía externa. Las técnicas más comunes incluyen clustering (agrupamiento), reducción de dimensionalidad, y detección de patrones, siendo especialmente valioso para explorar datos desconocidos y encontrar insights que no son evidentes a simple vista.
 
 **Aprendizaje Semi-supervisado**: Esta metodología combina elementos del aprendizaje supervisado y no supervisado, utiliza una pequeña cantidad de datos etiquetados junto con una gran cantidad de datos sin etiquetar. El objetivo es aprovechar la gran cantidad información no etiquetada para mejorar el rendimiento del modelo más allá de lo que sería posible usando sólo los limitados datos etiquetados. Es particularmente útil cuando obtener etiquetas es costoso o requiere mucho tiempo, como en reconocimiento de imágenes médicas o procesamiento de lenguaje natural, donde se puede usar texto abundante sin anotar para mejorar modelos entrenados con pocos ejemplos etiquetados.
