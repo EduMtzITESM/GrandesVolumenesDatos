@@ -53,6 +53,28 @@ Algunos de los principales algoritmos de aprendizaje supervisado son:
 
 **Aprendizaje semi-supervisado**: Esta metodología combina elementos del aprendizaje supervisado y no supervisado, utiliza una pequeña cantidad de datos etiquetados junto con una gran cantidad de datos sin etiquetar. El objetivo es aprovechar la gran cantidad información no etiquetada para mejorar el rendimiento del modelo más allá de lo que sería posible usando sólo los limitados datos etiquetados. Es particularmente útil cuando obtener etiquetas es costoso o requiere mucho tiempo, como en reconocimiento de imágenes médicas o procesamiento de lenguaje natural, donde se puede usar texto abundante sin anotar para mejorar modelos entrenados con pocos ejemplos etiquetados.
 
+1. **Autoentrenamiento (Self-Training)**: Usa un modelo supervisado para **etiquetar automáticamente** los datos no etiquetados más confiables. Estas nuevas observaciones etiquetadas se agregan al conjunto de entrenamiento y el modelo se reentrena.
+2. **Co-entrenamiento (Co-Training)**: Usa **dos (o más) clasificadores** entrenados en diferentes subconjuntos de características (vistas). Cada modelo etiqueta ejemplos para el otro.
+3. **Propagación de etiquetas (Label Propagation / Label Spreading)**: Modela los datos como un grafo en el que nodos = instancias, aristas = similitud, donde las etiquetas de los nodos conocidos se propagan a los no etiquetados.
+4. **Modelos Generativos Semi-supervisados**: Suponen que los datos provienen de una distribución probabilística mixta. y estiman las distribuciones de las clases usando los pocos datos etiquetados y ajustan los no etiquetados.
+
+* **EM con GMMs** (Expectation-Maximization con modelos de mezcla gaussiana)
+* **Semi-supervised Variational Autoencoders (VAE)**
+
+5. **Graph Neural Networks (GNN) Semi-supervisados**
+
+* Redes neuronales aplicadas a grafos (como los sociales o biológicos).
+* Ejemplo: **GCN (Graph Convolutional Network)**, que puede entrenarse con unas pocas etiquetas y propagar señales a través del grafo.
+
+6. **Algoritmos Basados en Consistencia / Entropía**. Generan modelos que sean robustos a pequeñas perturbaciones en los datos no etiquetados.
+* **Consistency Regularization**: el modelo debe dar resultados similares con datos ligeramente modificados.
+* **Entropy Minimization**: fuerza al modelo a dar predicciones más "decididas" (baja entropía) sobre datos no etiquetados.
+
+7. **Técnicas de Deep Learning Semi-supervisado**
+
+* **Pseudo-labeling**: versión moderna del autoentrenamiento con redes neuronales.
+* **MixMatch, FixMatch, Noisy Student** (state-of-the-art en visión): combinan augmentación, pseudoetiquetado, y consistencia.
+
 **Aprendizaje por refuerzo**: En este paradigma, un agente aprende a tomar decisiones óptimas en un entorno mediante la interacción directa, recibiendo recompensas o castigos basados en sus acciones. El objetivo es que el agente desarrolle una política de comportamiento que maximice la recompensa acumulada a largo plazo, aprendiendo qué acciones tomar en diferentes situaciones a través de prueba y error. No requiere necesariamente datos etiquetados, sino que aprende de las consecuencias de sus propias acciones. Es fundamental en aplicaciones como juegos, robótica, sistemas de recomendación y control autónomo, donde el agente debe aprender estrategias óptimas para alcanzar objetivos específicos.
 
 En PySpark (la API de Python para Apache Spark), el módulo `pyspark.ml` proporciona varios **algoritmos de aprendizaje supervisado**, tanto para **clasificación** como para **regresión**.
