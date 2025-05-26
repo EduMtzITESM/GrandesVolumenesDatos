@@ -18,7 +18,7 @@ En machine learning se suele caracterizar a los algoritmos dependiendo de la nat
 
 **Aprendizaje por refuerzo**: En este paradigma, un agente aprende a tomar decisiones óptimas en un entorno mediante la interacción directa, recibiendo recompensas o castigos basados en sus acciones. El objetivo es que el agente desarrolle una política de comportamiento que maximice la recompensa acumulada a largo plazo, aprendiendo qué acciones tomar en diferentes situaciones a través de prueba y error. No requiere necesariamente datos etiquetados, sino que aprende de las consecuencias de sus propias acciones. Es fundamental en aplicaciones como juegos, robótica, sistemas de recomendación y control autónomo, donde el agente debe aprender estrategias óptimas para alcanzar objetivos específicos.
 
-En PySpark (la API de Python para Apache Spark), el módulo `pyspark.ml` proporciona varios **algoritmos de aprendizaje supervisado**, tanto para **clasificación** como para **regresión**. Aquí tienes un resumen de los principales:
+En PySpark (la API de Python para Apache Spark), el módulo `pyspark.ml` proporciona varios **algoritmos de aprendizaje supervisado**, tanto para **clasificación** como para **regresión**.
 
 ### Clasificación (`pyspark.ml.classification`)
 
@@ -82,13 +82,11 @@ En PySpark (la API de Python para Apache Spark), el módulo `pyspark.ml` proporc
 * **Pipelines y Transformers** para preprocesamiento: `VectorAssembler`, `StringIndexer`, `StandardScaler`, etc.
 * **Evaluadores**: `BinaryClassificationEvaluator`, `MulticlassClassificationEvaluator`, `RegressionEvaluator`.
 
----
-
-En **PySpark**, los algoritmos de **aprendizaje no supervisado** están disponibles principalmente en el módulo `pyspark.ml.clustering` (para *clustering*) y `pyspark.ml.fpm` (para *pattern mining*). A continuación te presento los principales algoritmos no supervisados que puedes usar:
+En **PySpark**, los algoritmos de **aprendizaje no supervisado** están disponibles principalmente en el módulo `pyspark.ml.clustering` (para *clustering*) y `pyspark.ml.fpm` (para *pattern mining*). Los principales algoritmos no supervisados que se puede usar son:
 
 1. **K-Means**
    `KMeans()`
-   Clustering basado en centros de masa. Requiere especificar el número de clusters `k`.
+   Clustering basado en centroides. Requiere especificar el número de clusters `k`.
 
 2. **Bisecting K-Means**
    `BisectingKMeans()`
@@ -96,7 +94,7 @@ En **PySpark**, los algoritmos de **aprendizaje no supervisado** están disponib
 
 3. **Gaussian Mixture Model (GMM)**
    `GaussianMixture()`
-   Modelo probabilístico que asume que los datos provienen de una mezcla de distribuciones normales. Devuelve probabilidades de pertenencia.
+   Modelo probabilístico que supone que los datos provienen de una mezcla de distribuciones normales. Devuelve probabilidades de pertenencia.
 
 4. **Latent Dirichlet Allocation (LDA)**
    `LDA()`
