@@ -136,4 +136,4 @@ Aunque no están en un módulo específico de "unsupervised", PySpark ofrece sop
 
 El desarrollo de estas secciones se encuenta en el el jupyter notebook que se encuentra en este repositorio en la liga:
 
-[Jupyter Notebook](./sesion14)
+[Jupyter Notebook](./ProyectoEntrega3ML_A01795167.ipynb)
